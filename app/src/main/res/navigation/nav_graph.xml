@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/menuFragment">
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="edu.kokhan.auzoo.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_scanFragment"
+            app:destination="@id/scanFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_bookFragment"
+            app:destination="@id/bookFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookFragment"
+        android:name="edu.kokhan.auzoo.BookFragment"
+        android:label="fragment_book"
+        tools:layout="@layout/fragment_book" >
+        <action
+            android:id="@+id/action_bookFragment_to_animalFragment"
+            app:destination="@id/animalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/animalFragment"
+        android:name="edu.kokhan.auzoo.AnimalFragment"
+        android:label="fragment_animal"
+        tools:layout="@layout/fragment_animal" >
+        <action
+            android:id="@+id/action_animalFragment_to_arViewerFragment"
+            app:destination="@id/arViewerFragment" />
+        <argument
+            android:name="animalName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/scanFragment"
+        android:name="edu.kokhan.auzoo.ScanFragment"
+        android:label="fragment_scan"
+        tools:layout="@layout/fragment_scan" >
+        <action
+            android:id="@+id/action_scanFragment_to_animalFragment"
+            app:destination="@id/animalFragment"
+            app:popUpTo="@+id/menuFragment">
+            <argument
+                android:name="animalName"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/arViewerFragment"
+        android:name="edu.kokhan.auzoo.ArViewerFragment"
+        android:label="fragment_ar_viewer"
+        tools:layout="@layout/fragment_ar_viewer" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="edu.kokhan.auzoo.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/optionsFragment"
+        android:name="edu.kokhan.auzoo.OptionsFragment"
+        android:label="fragment_options"
+        tools:layout="@layout/fragment_options" />
+</navigation>
