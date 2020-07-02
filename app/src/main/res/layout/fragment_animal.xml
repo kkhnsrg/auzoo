@@ -1,15 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AnimalFragment">
+    tools:context=".ui.AnimalFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/animalName_tv"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/iv_mainPhoto"
+            android:layout_width="165dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_animalName"
+            style="@style/TitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toEndOf="@+id/iv_mainPhoto"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Animal Name" />
+
+
+        <TextView
+            android:id="@+id/tv_lifespanTitle"
+            style="@style/BoldTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Lifespan:"
+            app:layout_constraintStart_toEndOf="@+id/iv_mainPhoto"
+            app:layout_constraintTop_toBottomOf="@+id/tv_animalName" />
+
+        <TextView
+            android:id="@+id/tv_lifespanData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_lifespanTitle"
+            app:layout_constraintStart_toEndOf="@+id/tv_lifespanTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tv_animalName"
+            tools:text="15 - 20 years" />
+
+        <TextView
+            android:id="@+id/tv_massTitle"
+            style="@style/BoldTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Mass:"
+            app:layout_constraintStart_toEndOf="@+id/iv_mainPhoto"
+            app:layout_constraintTop_toBottomOf="@+id/tv_lifespanTitle" />
+
+        <TextView
+            android:id="@+id/tv_massData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:textSize="11sp"
+            app:layout_constraintStart_toEndOf="@+id/tv_massTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tv_lifespanTitle"
+            tools:text="1,000 - 2,500 kg" />
+
+        <TextView
+            android:id="@+id/tv_lengthTitle"
+            style="@style/BoldTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Length:"
+            app:layout_constraintStart_toEndOf="@+id/iv_mainPhoto"
+            app:layout_constraintTop_toBottomOf="@+id/tv_massTitle" />
+
+        <TextView
+            android:id="@+id/tv_lengthData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:textSize="11sp"
+            app:layout_constraintStart_toEndOf="@+id/tv_lengthTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tv_massTitle"
+            tools:text="1.5 - 2.7 m" />
+
+        <TextView
+            android:id="@+id/tv_heightTitle"
+            style="@style/BoldTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Height:"
+            app:layout_constraintStart_toEndOf="@+id/iv_mainPhoto"
+            app:layout_constraintTop_toBottomOf="@+id/tv_lengthTitle" />
+
+        <TextView
+            android:id="@+id/tv_heightData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:textSize="11sp"
+            app:layout_constraintStart_toEndOf="@+id/tv_heightTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tv_lengthTitle"
+            tools:text="150 - 270 cm" />
+
+        <Button
+            android:id="@+id/btn_arViewButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="View in AR"
+            app:icon="@drawable/ic_touch_app_white_24dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            app:layout_constraintStart_toEndOf="@+id/iv_mainPhoto"
+            app:layout_constraintTop_toBottomOf="@+id/tv_heightTitle" />
+
+        <TextView
+            android:id="@+id/tv_animalDescriptionTitle"
+            style="@style/BoldTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="Description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_mainPhoto" />
+
+        <TextView
+            android:id="@+id/tv_animalDescriptionText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginVertical="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:justificationMode="inter_word"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec ullamcorper sit amet risus nullam. Sit amet porttitor eget dolor morbi non arcu. Sit amet risus nullam eget. Tellus mauris a diam maecenas sed enim. Mauris cursus mattis molestie a iaculis. Sit amet purus gravida quis blandit turpis cursus in hac. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget. Praesent tristique magna sit amet purus gravida quis blandit turpis. Semper auctor neque vitae tempus quam pellentesque. Suscipit adipiscing bibendum est ultricies.
+Auctor neque vitae tempus quam pellentesque nec. Blandit aliquam etiam erat velit scelerisque in dictum non. In egestas erat imperdiet sed euismod nisi porta lorem. Purus non enim praesent elementum facilisis. In iaculis nunc sed augue lacus. Scelerisque in dictum non consectetur a erat. Vel orci porta non pulvinar neque laoreet suspendisse interdum. Diam quam nulla porttitor massa id neque aliquam vestibulum. Suspendisse sed nisi lacus sed. Amet mattis vulputate enim nulla aliquet porttitor lacus luctus. Neque sodales ut etiam sit amet nisl purus in mollis. Magna etiam tempor orci eu. Nec tincidunt praesent semper feugiat nibh. Bibendum neque egestas congue quisque egestas diam in arcu. Sed adipiscing diam donec adipiscing tristique risus. Ornare arcu odio ut sem nulla pharetra diam sit. Sit amet purus gravida quis blandit turpis cursus in hac. Vel turpis nunc eget lorem dolor sed viverra."
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_animalDescriptionTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
