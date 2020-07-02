@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/menuFragment"
-        android:name="edu.kokhan.auzoo.MenuFragment"
+        android:name="edu.kokhan.auzoo.ui.MenuFragment"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" >
         <action
@@ -22,10 +22,16 @@
         <action
             android:id="@+id/action_menuFragment_to_aboutFragment"
             app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_galleryFragment"
+            app:destination="@id/galleryFragment" />
     </fragment>
     <fragment
         android:id="@+id/bookFragment"
-        android:name="edu.kokhan.auzoo.BookFragment"
+        android:name="edu.kokhan.auzoo.ui.BookFragment"
         android:label="fragment_book"
         tools:layout="@layout/fragment_book" >
         <action
@@ -34,19 +40,19 @@
     </fragment>
     <fragment
         android:id="@+id/animalFragment"
-        android:name="edu.kokhan.auzoo.AnimalFragment"
+        android:name="edu.kokhan.auzoo.ui.AnimalFragment"
         android:label="fragment_animal"
         tools:layout="@layout/fragment_animal" >
-        <action
-            android:id="@+id/action_animalFragment_to_arViewerFragment"
-            app:destination="@id/arViewerFragment" />
         <argument
             android:name="animalName"
             app:argType="string" />
+        <action
+            android:id="@+id/action_animalFragment_to_arViewerFragment"
+            app:destination="@id/arViewerFragment" />
     </fragment>
     <fragment
         android:id="@+id/scanFragment"
-        android:name="edu.kokhan.auzoo.ScanFragment"
+        android:name="edu.kokhan.auzoo.ui.ScanFragment"
         android:label="fragment_scan"
         tools:layout="@layout/fragment_scan" >
         <action
@@ -60,17 +66,44 @@
     </fragment>
     <fragment
         android:id="@+id/arViewerFragment"
-        android:name="edu.kokhan.auzoo.ArViewerFragment"
+        android:name="edu.kokhan.auzoo.ui.ArViewerFragment"
         android:label="fragment_ar_viewer"
-        tools:layout="@layout/fragment_ar_viewer" />
+        tools:layout="@layout/fragment_ar_viewer" >
+        <argument
+            android:name="animalName"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="edu.kokhan.auzoo.AboutFragment"
+        android:name="edu.kokhan.auzoo.ui.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/optionsFragment"
-        android:name="edu.kokhan.auzoo.OptionsFragment"
+        android:name="edu.kokhan.auzoo.ui.OptionsFragment"
         android:label="fragment_options"
         tools:layout="@layout/fragment_options" />
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:name="edu.kokhan.auzoo.ui.GalleryFragment"
+        android:label="fragment_gallery"
+        tools:layout="@layout/fragment_gallery" >
+        <action
+            android:id="@+id/action_galleryFragment_to_imageFragment"
+            app:destination="@id/imageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="edu.kokhan.auzoo.ui.ImageFragment"
+        android:label="fragment_image"
+        tools:layout="@layout/fragment_image" >
+        <argument
+            android:name="photoPath"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="edu.kokhan.auzoo.ui.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game" />
 </navigation>

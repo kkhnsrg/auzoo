@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/rootCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        card_view:cardCornerRadius="24dp"
+        card_view:cardElevation="24dp"
+        card_view:cardPreventCornerOverlap="true"
+        card_view:cardUseCompatPadding="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/containerItemListAnimals"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:tag="containerItemListAnimalsTAG">
+
+            <ImageView
+                android:id="@+id/iv_animalPhoto"
+                android:layout_width="130dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="Animal picture"
+                android:scaleType="fitXY"
+                android:tag="iv_MainMovieTAG"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/tv_animalName"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:lines="1"
+                android:tag="tv_TitleMovieTAG"
+                android:text="Name"
+                android:textAlignment="textEnd"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/iv_animalPhoto"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/iv_animalPhoto"
+                tools:text="@string/app_name" />
+
+            <TextView
+                android:id="@+id/tv_animalShortDescription"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+
+                android:maxLines="5"
+
+
+                android:tag="tv_DescriptionMovieTAG"
+                android:text="Description"
+                android:textAlignment="textEnd"
+                android:textSize="16sp"
+
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_animalPhoto"
+                app:layout_constraintEnd_toStartOf="@+id/iv_animalPhoto"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_animalName"
+                tools:text="@tools:sample/lorem/random" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</FrameLayout>

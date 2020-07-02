@@ -1,2 +1,4 @@
-include ':app'
+include ':app', ':sceneform', ':ux'
 rootProject.name='Auzoo'
+project(':sceneform').projectDir = new File('app/libs/sceneform-android-sdk-1.16.0/sceneformsrc/sceneform')
+project(':ux').projectDir = new File('app/libs/sceneform-android-sdk-1.16.0/sceneformux/ux')
